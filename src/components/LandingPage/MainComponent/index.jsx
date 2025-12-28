@@ -1,28 +1,69 @@
-import React from 'react'
-import "./styles.css"
-import Button from '../../Common/Button/index.jsx'
-import phone from "../../../assets/phone.png"
-import gradient from "../../../assets/gradient.jpg"
-import {motion} from "framer-motion"
+import React from "react";
+import "./styles.css";
+import Button from "../../Common/Button/index.jsx";
+import phone from "../../../assets/phone.png";
+import gradient from "../../../assets/gradient.jpg";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 function MainComponent() {
   return (
-    <div className='flex-info'>
-        <div className='left-component'>
-            <motion.h1 className='track-crypto-heading' initial={{opacity:0, y:50}} animate={{opacity:1, y:0}} transition={{duration: 0.5}}>Track Finance</motion.h1>
-            <motion.h1 className='real-time-heading' initial={{opacity:0, y:50}} animate={{opacity:1, y:0}} transition={{duration: 0.5, delay:0.5}}>Real Time.</motion.h1>
-            <motion.p className='info-text' initial={{opacity:0, y:50}} animate={{opacity:1, y:0}} transition={{duration: 0.5, delay: 1}}>Track your finance through a public api in real time. Visit the dashboard to do so!</motion.p>
-            <motion.div className='btn-flex' initial={{opacity:0, x:50}} animate={{opacity:1, x:0}} transition={{duration: 0.5, delay: 1.5}}>
-                <Button text={"Dashboard"} />
-                <Button text={"Share"} outline={true} />
-            </motion.div>
-        </div>
-        <div className='phone-container'>
-            <motion.img src={phone} className='phone' initial={{y:-20}} animate={{y:20}} transition={{type:"smooth", repeatType:"mirror", duration:2, repeat:Infinity, }}/>
-            <img src={gradient} className='gradient'/>
-        </div>
+    <div className="flex-info">
+      <div className="left-component">
+        <motion.h1
+          className="track-crypto-heading"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          Track Finance
+        </motion.h1>
+        <motion.h1
+          className="real-time-heading"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+        >
+          Real Time.
+        </motion.h1>
+        <motion.p
+          className="info-text"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 1 }}
+        >
+          Track your finance through a public api in real time. Visit the
+          dashboard to do so!
+        </motion.p>
+        <motion.div
+          className="btn-flex"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 1.5 }}
+        >
+          <Link to="/dashboard">
+            <Button text={"Dashboard"} />
+          </Link>
+          <Button text={"Share"} outline={true} />
+        </motion.div>
+      </div>
+      <div className="phone-container">
+        <motion.img
+          src={phone}
+          className="phone"
+          initial={{ y: -20 }}
+          animate={{ y: 20 }}
+          transition={{
+            type: "smooth",
+            repeatType: "mirror",
+            duration: 2,
+            repeat: Infinity,
+          }}
+        />
+        <img src={gradient} className="gradient" />
+      </div>
     </div>
-  )
+  );
 }
 
-export default MainComponent
+export default MainComponent;
